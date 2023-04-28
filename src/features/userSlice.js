@@ -3,12 +3,12 @@ import axios from 'axios';
 
 
 export const fetchUser = createAsyncThunk('user/fetchUser', async () => {
-    const response = await axios.get(`api/current_user`);
+    const response = await axios.get(`https://emaily-server-production.up.railway.app/api/current_user`);
     return response 
 })
 
 export const handleToken = createAsyncThunk('user/handleToken', async (token) => {
-    const response = await axios.post(`api/stripe`, token);
+    const response = await axios.post(`https://emaily-server-production.up.railway.app/api/stripe`, token);
     console.log(response)
     return response 
 })
