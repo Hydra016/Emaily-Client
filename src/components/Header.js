@@ -29,11 +29,11 @@ const Header = () => {
             <>
               <li style={{ margin: '0 12px' }}>Credits: {user && user.credits}</li>
               <li><Payments /></li>
-              <li><a href="https://emaily-server-production.up.railway.app/api/logout">Logout</a></li>
+              <li><a href="/api/logout">Logout</a></li>
             </>
           ) : (
             <li>
-              <a href="https://emaily-server-production.up.railway.app/auth/google">Login With Google</a>
+              <a href="/auth/google">Login With Google</a>
             </li>
           )}
         </ul>
