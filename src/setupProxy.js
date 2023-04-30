@@ -4,11 +4,8 @@ module.exports = function (app) {
     ['/api', '/auth/google'],
     createProxyMiddleware({
       target: 'https://emaily-server-production.up.railway.app',
-      changeOrigin: true,
-      onProxyRes: function (proxyRes, req, res) {
-        proxyRes.headers['Content-Encoding'] = 'gzip';
-        proxyRes.headers['Transfer-Encoding'] = 'chunked';
-        proxyRes.pipe(zlib.createGzip()).pipe(res);
+      headers: {
+        host: 'emaily-server-production.up.railway.app'
       }
     })
   );
