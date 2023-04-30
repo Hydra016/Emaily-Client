@@ -3,7 +3,7 @@ module.exports = function (app) {
   app.use(
     ['/api', '/auth/google'],
     createProxyMiddleware({
-      target: 'https://emaily-server-production.up.railway.app',
+      target: 'https://emaily-server-production.up.railway.app/',
     })
   );
 };
